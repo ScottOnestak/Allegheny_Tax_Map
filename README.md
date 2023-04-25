@@ -1,1 +1,10 @@
-# Allegheny_Tax_Map
+This is a map for estimated tax rates of municipalities in Allegheny County for the 2022 tax year currently underway.  The current CLR for 2023 is being applied in the estimation.  The estimates do not factor in land taxes a few municipalities have or discounts from actions like early payment or homestead exemptions as this data is not easily accessable.  
+
+Tableau maps can be found at the following locations.
+
+[Local Income Tax Rates](https://public.tableau.com/app/profile/scott.onestak/viz/AlleghenyLocalIncomeTaxRates/AlleghenyLocalIncomeTaxRates)
+
+[Property Tax Rates](https://public.tableau.com/app/profile/scott.onestak/viz/AlleghenyPropertyTaxRates/AlleghenyPropertyTaxRates)
+
+[Allegheny Local + Property Tax Estimator](https://public.tableau.com/app/profile/scott.onestak/viz/AlleghenyLocalPropertyTaxEstimate/AlleghenyLocalPropertyTaxEstimate)
+

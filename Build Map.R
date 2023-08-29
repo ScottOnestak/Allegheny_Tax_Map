@@ -83,7 +83,12 @@ for(i in seq(from=1,to=dim(muni_tax)[1],by=1)){
   } else if(muni_tax[i,"JOIN_NAME"]=="MOUNT LEBANON"){
     muni_tax[i,"JOIN_NAME"]="MOUNT LEBANON TOWNSHIP"
   }
+  
+  if(muni_tax[i,"Land_Municipal_Tax"] == "N/A") {
+    muni_tax[i,"Land_Municipal_Tax"] = ""
+  }
 }
+muni_tax$Land_Municipal_Tax = as.numeric(muni_tax$Land_Municipal_Tax)
 
 #pull school tax rates
 school_tax = as.data.frame(read_html("https://apps.alleghenycounty.us/website/millsd.asp") %>% 
@@ -226,7 +231,7 @@ for(i in seq(from=50000,to=300000,by=5000)){
 colnames(scenarios) = c("Income","Property_Price")
 
 scenarios = taxes %>% full_join(.,scenarios, by = character()) %>%
-              mutate(CLR = 1.57) %>%
+              mutate(CLR = 1.83) %>%
               mutate(Total_Tax = Income_Tax*Income + ((Property_Price*(1/CLR))-18000)*County +(Property_Price*(1/CLR))*(Total_Property_Tax-County)) %>%
               select(c("NAME","Income","Property_Price","Total_Tax")) %>%
               rename("Property Purchase Price"="Property_Price",
